@@ -1,0 +1,16 @@
+[project]
+name = "quiz-generator"
+version = "0.1.0"
+description = "Generates multiple-choice quizzes from study passages, validates each question automatically, and evaluates the generator on a golden set. Built in experiment > validate > evaluate loops."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=2.3.0",
+    "python-dotenv>=1.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.2",
+]
