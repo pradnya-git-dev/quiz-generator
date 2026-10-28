@@ -41,14 +41,16 @@ ANTHROPIC_API_KEY=your_api_key_here
 Pass a study passage as an argument:
 
 ```bash
-uv run src/quiz_generator/generator.py path/to/passage.md
+uv run generate-quiz path/to/passage.md
 ```
 
 To run on the included sample:
 
 ```bash
-uv run src/quiz_generator/generator.py data/samples/01-git-tags-explainer.md
+uv run generate-quiz data/samples/01-git-tags-explainer.md
 ```
+
+Output is written to `data/output/output-quiz-<timestamp>.md`.
 
 ## Progress log with evals
 
@@ -56,4 +58,4 @@ uv run src/quiz_generator/generator.py data/samples/01-git-tags-explainer.md
 
 | Tag | Changes |
 |---|---|
-| v0.1.0 | **Basic quiz generation via Claude API:** plain-text response printed to stdout. <br><br> **Repo housekeeping setup:** `uv` project setup with `.env` config and sample passage; added Ruff (linter + formatter) and pre-commit hooks; trimmed `.gitignore` to project-specific entries |
+| v0.0.1 | **Basic quiz generation via Claude Messages API:** plain-text response written to `data/output/output-quiz-<timestamp>.md`. <br><br> **Repo housekeeping setup:** `uv` project setup with `.env` config and sample passage; added Ruff (linter + formatter) and pre-commit hooks; trimmed `.gitignore` to project-specific entries. <br><br> **Entry point:** `generate-quiz` CLI entry point added via `pyproject.toml` `[project.scripts]`. |
